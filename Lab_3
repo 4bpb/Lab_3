@@ -25,28 +25,40 @@ public class assignment
             System.out.println("Input not correct !!!!!!yes or no");
             answer = x.next();
         }
+        boolean pyramid = true;
         if(answer.equals("Yes"))
         {
-            boolean pyramid = true;
-            System.out.println("We will be printing a Pyramid");
+            pyramid = true;
+            System.out.println("We will be printing a Diamond");
         }
         else
         {
-            boolean pyramid = false;
-            System.out.println("We will be printing a Diamond");
+            pyramid = false;
+            System.out.println("We will be printing a Pyramid");
         }
         String stars = "*";
-        for(int i =1; i<height; i++)
+        for(int i =0; i<height; i++)
         {
-
-            for(int ii = 1; ii<height; ii--)
+            for(int ii = (height*2-1)/2-i; ii>0; ii--)
             {
-                System.out.println(" ");
+                System.out.print(" ");
             }
             System.out.println(stars);
             stars = stars+"**";
-            
 
+        }
+        stars=stars.substring(2);
+        if(pyramid)
+        {
+            for(int i =1; i<height; i++)
+            {
+                for(int ii = i; ii>0; ii--)
+                {
+                    System.out.print(" ");
+                }
+                stars = stars.substring(2);
+                System.out.println(stars);
+            }   
         }
     }
 }
